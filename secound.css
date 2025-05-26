@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Creepster&family=Cinzel:wght@400;600&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-image: url("ng.jpg");
+        background-size: cover; 
+        background-position: center; 
+        background-repeat: no-repeat; 
+
+        font-family: "Cinzel", serif;
+        color: white;
+        overflow: hidden;
+        height: 100vh;
+        position: relative;
+      }
+
+      
+
+      /* Village silhouette at bottom */
+      
+
+    
+      
+
+      .container {
+        position: relative;
+        z-index: 10;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 40px;
+      }
+
+      .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-top: -100px;
+      }
+
+      .card {
+        width: 200px;
+        height: 280px;
+        background: linear-gradient(
+          145deg,
+          rgba(200, 150, 200, 0.15),
+          rgba(150, 100, 180, 0.25)
+        );
+        border-radius: 25px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        backdrop-filter: blur(15px);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+          inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(
+          45deg,
+          #ff6b9d,
+          #c44569,
+          #8e44ad,
+          #3742fa,
+          #2f3542
+        );
+        border-radius: 25px;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .card:hover::before {
+        opacity: 0.7;
+        animation: borderGlow 2s linear infinite;
+      }
+
+      
+
+      .card:hover {
+        transform: translateY(-15px) scale(1.05);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+          0 0 20px rgba(255, 255, 255, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      }
+
+      .card-letter {
+        font-size: 120px;
+        font-weight: 600;
+        background: linear-gradient(
+          135deg,
+          #f093fb 0%,
+          #f5576c 25%,
+          #4facfe 50%,
+          #00f2fe 75%,
+          #f093fb 100%
+        );
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin: 40px 0 20px;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        animation: gradientShift 3s ease-in-out infinite;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+      }
+
+      @keyframes gradientShift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      .card-title {
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 400;
+        letter-spacing: 1px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        margin-bottom: 20px;
+      }
+
+      /* Individual card animations */
+      .card:nth-child(1) {
+        animation: float1 4s ease-in-out infinite;
+      }
+
+      .card:nth-child(2) {
+        animation: float2 4.5s ease-in-out infinite;
+      }
+
+      .card:nth-child(3) {
+        animation: float3 4.2s ease-in-out infinite;
+      }
+
+      .card:nth-child(4) {
+        animation: float4 3.8s ease-in-out infinite;
+      }
+
+      @keyframes float1 {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-10px) rotate(1deg);
+        }
+      }
+
+      @keyframes float2 {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-15px) rotate(-1deg);
+        }
+      }
+
+      @keyframes float3 {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-8px) rotate(0.5deg);
+        }
+      }
+
+      @keyframes float4 {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-12px) rotate(-0.5deg);
+        }
+      }
+
+      .card img {
+  width: 100%;      /* ให้รูปเต็มความกว้างของ .card */
+  height: 40vh;     /* รักษาสัดส่วนรูป */
+  max-height: 250px; /* จำกัดความสูงไม่เกิน 250px */
+  object-fit: cover;
+  border-radius: 12px;
+}
+      
